@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 public class Flight {
 
     @Id
+    @Column(name = "flight_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int flightId;
 
