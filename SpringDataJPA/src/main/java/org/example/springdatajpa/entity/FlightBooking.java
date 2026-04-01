@@ -20,8 +20,7 @@ public class FlightBooking {
     public FlightBooking() {
     }
 
-    public FlightBooking(int bookingId, int customerId, int flightId) {
-        this.bookingId = bookingId;
+    public FlightBooking(int customerId, int flightId) {
         this.customerId = customerId;
         this.flightId = flightId;
     }
