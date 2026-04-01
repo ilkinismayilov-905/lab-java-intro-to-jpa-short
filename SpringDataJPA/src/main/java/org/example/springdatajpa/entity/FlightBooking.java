@@ -11,21 +11,21 @@ public class FlightBooking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int bookingId;
 
-    @ManyToOne
-    @JoinColumn(name = "customer_id", referencedColumnName = "customerId")
-    private Customer customer;
+    @Column(name = "customer_id")
+    private int customerId;
 
-    @ManyToOne
-    @JoinColumn(name = "flight_id", referencedColumnName = "flightId")
-    private Flight flight;
+    @Column(name = "flight_id")
+    private int flightId;
 
     public FlightBooking() {
     }
 
-    public FlightBooking(Customer customer, Flight flight) {
-        this.customer = customer;
-        this.flight = flight;
+    public FlightBooking(int bookingId, int customerId, int flightId) {
+        this.bookingId = bookingId;
+        this.customerId = customerId;
+        this.flightId = flightId;
     }
+
     public int getBookingId() {
         return bookingId;
     }
@@ -34,19 +34,19 @@ public class FlightBooking {
         this.bookingId = bookingId;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
-    public Flight getFlight() {
-        return flight;
+    public int getFlightId() {
+        return flightId;
     }
 
-    public void setFlight(Flight flight) {
-        this.flight = flight;
+    public void setFlightId(int flightId) {
+        this.flightId = flightId;
     }
 }
